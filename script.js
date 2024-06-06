@@ -18,38 +18,50 @@ const snareBtn = document.getElementById("snareBtn");
 const tinkBtn = document.getElementById("tinkBtn");
 const tomBtn = document.getElementById("tomBtn");
 
-boomBtn.addEventListener("click", () => {
-  boomSound.play();
+function playSound(sound) {
+  sound.play();
+}
+
+document.addEventListener("click", (event) => {
+  if (event.target === boomBtn) {
+    playSound(boomSound);
+  } else if (event.target === clapBtn) {
+    playSound(clapSound);
+  } else if (event.target === hihatBtn) {
+    playSound(hihatSound);
+  } else if (event.target === kickBtn) {
+    playSound(kickSound);
+  } else if (event.target === openhatBtn) {
+    playSound(openhatSound);
+  } else if (event.target === rideBtn) {
+    playSound(rideSound);
+  } else if (event.target === snareBtn) {
+    playSound(snareSound);
+  } else if (event.target === tinkBtn) {
+    playSound(tinkSound);
+  } else if (event.target === tomBtn) {
+    playSound(tomSound);
+  }
 });
 
-clapBtn.addEventListener("click", () => {
-  clapSound.play();
-});
-
-hihatBtn.addEventListener("click", () => {
-  hihatSound.play();
-});
-
-kickBtn.addEventListener("click", () => {
-  kickSound.play();
-});
-
-openhatBtn.addEventListener("click", () => {
-  openhatSound.play();
-});
-
-rideBtn.addEventListener("click", () => {
-  rideSound.play();
-});
-
-snareBtn.addEventListener("click", () => {
-  snareSound.play();
-});
-
-tinkBtn.addEventListener("click", () => {
-  tinkSound.play();
-});
-
-tomBtn.addEventListener("click", () => {
-  tomSound.play();
+document.addEventListener("keydown", (event) => {
+  if (event.code === "KeyA") {
+    playSound(boomSound);
+  } else if (event.code === "KeyS") {
+    playSound(clapSound);
+  } else if (event.code === "KeyD") {
+    playSound(hihatSound);
+  } else if (event.code === "KeyF") {
+    playSound(kickSound);
+  } else if (event.code === "KeyG") {
+    playSound(openhatSound);
+  } else if (event.code === "KeyH") {
+    playSound(rideSound);
+  } else if (event.code === "KeyJ") {
+    playSound(snareSound);
+  } else if (event.code === "KeyK") {
+    playSound(tinkSound);
+  } else if (event.code === "KeyL") {
+    playSound(tomSound);
+  }
 });
